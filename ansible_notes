@@ -1,0 +1,29 @@
+Installing ansible
+
+check if pip installed 
+$which pip
+
+install ansible 
+sudo pip install ansible
+
+upgrade pip
+sudo pip install --upgrade pip
+
+specify what agent to use when running ad-hoc commands
+ssh-agent bash
+
+create file with private key in /home/ec2-user/.ssh/key.pem
+
+add private key to known keys 
+ssh-add ~/.ssh/key.pem
+
+run first ansible command
+ansible example -m ping -u ec2-user
+
+run the command with become root in the end
+ansible example -a "df -h" -b
+
+
+
+
+
