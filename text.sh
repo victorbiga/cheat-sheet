@@ -22,7 +22,7 @@ function myname {
 	echo $name
 }
 
-#core program
+#core program, this will be updated to loops on next push
 echo $HELLO
 sleep 5
 hello
