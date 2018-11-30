@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #variables
-COUNTER=5
+COUNTER=15
 time="sleep 2"
 HELLO="Hello dear friend. This is a simple script with 2 local variables executed with 2 seconds pause, lets test it!"
 final_message="Looks like it worked okey, right?"
@@ -24,7 +24,7 @@ hello
 $time
 myname
 $time
-echo $final_message I will start 5 seconds counter until this programm exits
+echo $final_message I will start $COUNTER seconds counter until this programm exits
 $time
 
 until [ $COUNTER -lt 1 ]; do
