@@ -1,12 +1,10 @@
 #!/bin/bash
 
-#variables
 COUNTER=10
 time="sleep 2"
 HELLO="Hello dear friend. This is a simple script with 2 local variables executed with 2 seconds pause, lets test it!"
 final_message="Looks like it worked okey, right?"
 
-#our local variables
 function hello {
 	local HELLO="This will be returned, once the program reads first function with local variable provided"
 	echo $HELLO
@@ -17,7 +15,6 @@ function myname {
 	echo $name
 }
 
-#core program, this will be updated to loops on next push
 echo $HELLO
 $time
 hello
