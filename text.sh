@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #variables
-COUNTER=15
+COUNTER=10
 time="sleep 2"
 HELLO="Hello dear friend. This is a simple script with 2 local variables executed with 2 seconds pause, lets test it!"
 final_message="Looks like it worked okey, right?"
