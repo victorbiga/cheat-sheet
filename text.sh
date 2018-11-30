@@ -1,15 +1,10 @@
 #!/bin/bash
 
 #variables
-
-HELLO="Hello dear friend. This is a simple script with 2 local variables executed with 5 seconds pause, lets test it!"
+COUNTER=5
+time="sleep 2"
+HELLO="Hello dear friend. This is a simple script with 2 local variables executed with 2 seconds pause, lets test it!"
 final_message="Looks like it worked okey, right?"
-cd5=5
-cd4=4
-cd3=3
-cd2=2
-cd1=1
-
 
 #our local variables
 function hello {
@@ -24,22 +19,16 @@ function myname {
 
 #core program, this will be updated to loops on next push
 echo $HELLO
-sleep 5
+$time
 hello
-sleep 5
+$time
 myname
-sleep 5
-echo $final_message
-echo $cd5
-sleep 1
-echo $cd4
-sleep 1
-echo $cd3
-sleep 1
-echo $cd2
-sleep 1
-echo $cd1
-sleep 1 
-echo Exit
-sleep 1
+$time
+echo $final_message I will start 5 seconds counter until this programm exits
+$time
 
+until [ $COUNTER -lt 1 ]; do
+	echo Exiting in $COUNTER seconds
+	sleep 1 
+	let COUNTER-=1
+done
