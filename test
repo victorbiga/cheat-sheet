@@ -18,4 +18,26 @@ echo "5 / 4 = $num6"
 
 
 
+echo $((5**2))
+echo $(( 5%4 ))
+
+rand=5
+let rand+=4
+echo "$rand"
+
+echo "rand++ = $(( rand++ ))"
+echo "++rand = $(( ++rand ))"
+echo "rand-- = $(( rand-- ))"
+echo "--rand = $(( --rand ))"
+
+num7="1.2"
+num8="3.4"
+num9=$(python -c "print $num7+$num8")
+echo $num9
+
+cat<< END
+This text
+prints on many lines
+END
+
 
