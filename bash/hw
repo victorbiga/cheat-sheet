@@ -1,1 +1,13 @@
-echo Hello, World!
+#!/bin/bash
+#: Title	: hw
+#: Date		: 20-12-2018
+#: Author	: "Victor Biga" <victor.biga@earthport.com>
+#: Version	: 1.0
+#: Description	: Create directory in user home location and then create 2 additional sub-folders
+#: Options	: None
+
+mkdir $HOME/bp1
+cd $HOME/bp1
+mkdir bin scripts
+
+
