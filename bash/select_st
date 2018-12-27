@@ -1,0 +1,18 @@
+#!/bin/bash
+PS3="Select Your Favorite Planet"
+select planet in "Earth" "Saturn" "Venus" "Quit"
+do
+if [ "$planet" == Earth ]
+then
+	echo -e "$planet is 3rd"
+elif [ "$planet" == Saturn ]
+then
+	echo -e "$planet is 6th"
+elif [ "$planet" == Venus ]
+then
+	echo -e "$planet is 2nd"
+else [ "$planet" == Quit ]
+	echo "Good Bye !"
+	exit 0
+fi
+done
