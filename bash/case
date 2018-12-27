@@ -73,33 +73,47 @@ case $application in
 		app
 		link;;
 	ep-ar)
-		app;;
+		app
+		link;;
 	ep-bi)
-		app;;
+		app
+		link;;
 	ep-df)
-		app;;
+		app
+		link;;
 	ep-dlg)
-		app;;
+		app
+		link;;
 	ep-ebds)
-		app;;
+		app
+		link;;
 	ep-eia)
-		app;;
+		app
+		link;;
 	ep-epa)
-		app;;
+		app
+		link;;
 	ep-epc)
-		app;;
+		app
+		link;;
 	ep-eps2)
-		app;;
+		app
+		link;;
 	ep-epw)
-		app;;
+		app
+		link;;
 	ep-mas)
-		app;;
+		app
+		link;;
 	ep-mlm)
-		app;;
+		app
+		link;;
 	ep-po)
-		app;;
+		app
+		link;;
 	ep-scheduler)
-		app;;
+		app
+		link;;
 	Quit)
 		echo "Good Bye !"
 		exit 0;;
