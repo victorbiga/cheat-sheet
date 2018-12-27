@@ -35,11 +35,12 @@ done
 }
 
 server_sandbox(){
-	ssh -t vmsandboxapp\
-		sudo su wasadm\;\
-		cd /opt/IBM/APP/Properties/$application/$application-transformer\;\
-		touch labas\;\
+	ssh -T vmsandboxapp <<EOF
+		sudo su wasadm 
+		cd $installation_path
+		touch labas
 		exit
+EOF
 }
 
 core_commands(){
