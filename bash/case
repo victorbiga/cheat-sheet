@@ -30,12 +30,24 @@ case $environment in
 	*)
 		echo "Invalid Option"
 
-
-
-
 esac
 done
 }
+
+server_sandbox(){
+	ssh -t vmsandboxapp\
+		sudo su wasadm\;\
+		cd /opt/IBM/APP/Properties/$application/$application-transformer\;\
+		touch labas\;\
+		exit
+}
+
+core_commands(){
+	sudo su wasadm && cd $installation_path && touch labas
+}
+
+
+
 
 env(){
 	echo
@@ -61,6 +73,12 @@ link(){
 	echo
 }
 
+successful(){
+	echo
+	echo -e "Completed\n \nGood Bye !"
+	exit 0
+}
+
 
 select_app(){
 
@@ -71,10 +89,11 @@ do
 case $application in 
 	ep-abif)
 		app
-		link;;
+		link
+		server_sandbox
+		successful;;
 	ep-ar)
-		app
-		link;;
+		app;;
 	ep-bi)
 		app
 		link;;
