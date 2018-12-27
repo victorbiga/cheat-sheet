@@ -1,0 +1,113 @@
+#!/bin/bash
+
+clear
+
+
+
+
+select_env(){
+PS3="Select the environment to deploy the map to: "
+
+select environment in "Sandbox" "Integration" "UAT2" "Production" "Quit"
+do
+
+case $environment in 
+	Sandbox)
+		env
+		select_app;;
+	Integration) 	
+		env
+		select_app;;
+	UAT2)
+		env
+		select_app;;
+	Production)
+		env
+		select_app;;
+	Quit)
+		"Good Bye !"
+		exit 0;;
+	*)
+		echo "Invalid Option"
+
+
+
+
+esac
+done
+}
+
+env(){
+	echo
+	echo "You have selected $environment"
+	echo
+}
+
+
+app(){
+	installation_path=/opt/IBM/APP/Properties/$application/$application-transformer
+	echo
+	echo -e "You have selected $application which will be deployed to:\n $installation_path"
+	echo
+}
+
+link(){
+	echo
+	echo "Please provide the map location for $application deployment:"
+	echo
+	read url
+	echo
+	echo $url
+	echo
+}
+
+
+select_app(){
+
+PS3="Select the application to deploy map to: "
+
+select application in "ep-abif" "ep-ar" "ep-bi" "ep-df" "ep-dlg" "ep-ebds" "ep-eia" "ep-epa" "ep-epc" "ep-eps2" "ep-epw" "ep-mas" "ep-mlm" "ep-po" "ep-scheduler" "Quit"
+do 
+case $application in 
+	ep-abif)
+		app
+		link;;
+	ep-ar)
+		app;;
+	ep-bi)
+		app;;
+	ep-df)
+		app;;
+	ep-dlg)
+		app;;
+	ep-ebds)
+		app;;
+	ep-eia)
+		app;;
+	ep-epa)
+		app;;
+	ep-epc)
+		app;;
+	ep-eps2)
+		app;;
+	ep-epw)
+		app;;
+	ep-mas)
+		app;;
+	ep-mlm)
+		app;;
+	ep-po)
+		app;;
+	ep-scheduler)
+		app;;
+	Quit)
+		echo "Good Bye !"
+		exit 0;;
+	*)
+		echo "Invalid Option"
+	esac
+	done
+
+}
+
+select_env
