@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Guess the name ?"
+read name
+until [ "$name" == "victor" ]
+do 
+	echo "$name is not correct"
+	break
+done
+

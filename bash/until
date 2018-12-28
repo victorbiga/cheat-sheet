@@ -1,0 +1,8 @@
+#!/bin/bash
+
+counter=25
+until [ "$counter" -eq 0 ]
+do
+	echo "$counter is greater than zero"
+	let "counter--"
+done

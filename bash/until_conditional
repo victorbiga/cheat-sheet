@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "What is your name ?"
+read name
+namer="victor"
+if [ "$name" == "$namer" ]
+then 
+	echo "Dear $name Your name is $name and here are the results"
+else
+	echo "Sorry you are not Authorized to view the results!"
+	exit 0
+fi
+
+count=10
+until [ "$count" -le 0 ]
+do
+	echo "$count is greater than 0"
+	let "count--"
+done
