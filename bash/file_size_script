@@ -1,0 +1,11 @@
+#!/bin/bash
+file=file.txt
+echo "Current Size of File is `du -bh $file` Bytes"
+until [ `ls -ltr $file | awk '{print $5}'` -lt 5000 ]
+do
+	echo "File Size is Greater than 5000" | mail -s "File Size Greater Please take Action" root@localhost
+	break
+done
+
+
+
