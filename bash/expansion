@@ -1,0 +1,12 @@
+#!/bin/bash
+#: Title	: expansion
+#: Date		: 03-01-2019
+#: Author	: "Victor Biga" <victor.biga@earthport.com>
+#: Version	: 1.0
+#: Description	: mock
+#: Options	: None
+
+
+for i in {3..99..3}; do
+    echo "Welcome $i"
+done
