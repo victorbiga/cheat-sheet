@@ -1,0 +1,10 @@
+#!/bin/bash
+ls -lrt
+echo $?
+if $? = 0 then
+	printf "command succescfull"
+else 
+	echo "command not succesfull"
+fi
+
+

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+myfunc_success() {
+  return 0 
+}
+if myfunc_success; then
+  echo "success"
+else
+  echo "failure"
+fi
+
+
+myfunc_failure() {
+  return 1
+}
+if myfunc_failure; then
+  echo "success"
+else
+  echo "failure"
+fi
+

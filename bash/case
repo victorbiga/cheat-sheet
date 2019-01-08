@@ -39,6 +39,7 @@ server_sandbox(){
 		sudo su wasadm 
 		cd $installation_path
 		touch labas
+		
 		exit
 EOF
 }

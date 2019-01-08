@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+function checkExit(){
+    if test "$?" == "0"; then
+        echo "Command was succesfull"
+        exit 1
+    else printf "%s\n" "Not succesful"
+        exit 0
+    fi
+}
+
+ls -$1 -$2 >> file 2>&1
+checkExit
+
