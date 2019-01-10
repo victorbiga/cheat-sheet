@@ -1,0 +1,3 @@
+#!/bin/bash
+printf -v num4 "%010d" 4
+printf "%s\n" "$num4"
