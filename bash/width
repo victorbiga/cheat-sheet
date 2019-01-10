@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%10s %-10s:\n" first second third fourth fifth sixth
+printf "  %-10s:\n" first second third fourth fifth sixth
