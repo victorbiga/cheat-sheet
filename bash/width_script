@@ -1,0 +1,27 @@
+#!/bin/bash
+#: Description : print formatted sales report
+
+## Build a long string of equals signs
+divider=====================================
+divider=$divider$divider
+
+## Format strings for printf
+header="\n %-10s %15s %10s %15s\n"
+format=" %-10s %15.2f %10d %15.2f\n"
+
+## Width of divider
+totalwidth=55
+
+## Print categories
+printf "$header" PAVADINIMAS "VIENETO KAINA" KIEKIS "BENDRA SUMA"
+
+## Print divider to match width of report
+printf "%$totalwidth.${totalwidth}s\n" "$divider"
+
+## Print lines of report
+printf "$format" \
+Kede 79.95 4 319.8 \
+Stalas 209.99 1 209.99 \
+Atrama 315.49 2 630.98
+
+printf "%$totalwidth.${totalwidth}s\n" "$divider"
