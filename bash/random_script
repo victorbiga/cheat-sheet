@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%4.4f\n %5f\n %3f\n %5f\n" $RANDOM $RANDOM $RANDOM $RANDOM
+printf "%d %d\n %d %d\n" $RANDOM $RANDOM $RANDOM $RANDOM $RANDOM $RANDOM $RANDOM $RANDOM
