@@ -1,0 +1,5 @@
+#!/bin/bash
+exec 1>output
+exec 2>errfile
+echo "hello world"
+eccccc

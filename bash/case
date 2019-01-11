@@ -15,7 +15,7 @@ case $environment in
 	Sandbox)
 		env
 		select_app;;
-	Integration) 	
+	Integration)
 		env
 		select_app;;
 	UAT2)
@@ -25,7 +25,7 @@ case $environment in
 		env
 		select_app;;
 	Quit)
-		"Good Bye !"
+		echo Good Bye !
 		exit 0;;
 	*)
 		echo "Invalid Option"
