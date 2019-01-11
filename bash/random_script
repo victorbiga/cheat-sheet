@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%d %d\n %d %d\n" $RANDOM $RANDOM $RANDOM $RANDOM $RANDOM $RANDOM $RANDOM $RANDOM
+printf "%1.4s.%1.4s\n %0.5s.%0.5s\n %0.5s.%0.3s\n %1.4s.%0.5s\n " $RANDOM $RANDOM $RANDOM $RANDOM $RANDOM $RANDOM $RANDOM $RANDOM
