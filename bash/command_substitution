@@ -1,0 +1,10 @@
+#!/bin/bash
+
+date=`date`
+
+echo $date
+
+
+official_date=$( date )
+echo $official_date
+
