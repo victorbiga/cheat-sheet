@@ -1,0 +1,3 @@
+#!/bin/bash
+server_name=`hostname`
+echo $server_name
