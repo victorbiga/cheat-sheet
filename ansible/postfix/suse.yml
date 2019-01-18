@@ -1,0 +1,76 @@
+---
+- hosts: suse
+  become: yes
+
+  vars:
+      date: "{{ lookup('pipe', 'date +%d%m%Y-%H-%M') }}"
+
+  vars_files:
+      - /vars/secrets.yml
+
+  tasks:
+    - name: create postfix_backup directory
+      file:
+        path: /tmp/postfix_backup
+        state: directory
+        mode: 0755
+
+    - name: create date folder within /tmp/postfix_backup/
+      file:
+        path: /tmp/postfix_backup/{{ date }}
+        state: directory
+        mode: 0755
+
+
+    - name: Synchronize two directories on one remote host.
+      synchronize:
+        src: /etc/postfix/
+        dest: /tmp/postfix_backup/{{ date }}/
+      delegate_to: "{{ inventory_hostname }}"
+
+    - name:
+      command: postconf -e "relayhost = [email-smtp.eu-west-1.amazonaws.com]:587" \
+                "smtp_sasl_auth_enable = yes" \
+                "smtp_sasl_security_options = noanonymous" \
+                "smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd" \
+                "smtp_use_tls = yes" \
+                "smtp_tls_security_level = encrypt" \
+                "smtp_tls_note_starttls_offer = yes"
+
+    - name: main.cf
+      lineinfile:
+        path: /etc/postfix/master.cf
+        regexp: '^    -o smtp_fallback_relay='
+        line: '#    -o smtp_fallback_relay='
+
+    - name: sasl_passwd update
+      lineinfile:
+        path: /etc/postfix/sasl_passwd
+        regexp: '^email-smtp.us-west-1.amazonaws.com'
+        line: '[email-smtp.eu-west-1.amazonaws.com]:587 {{ USERNAME }}:{{ PASSWORD }}'
+
+    - name: add sender canonical email
+      lineinfile:
+          path: /etc/postfix/sender_canonical
+          regexp: '^/.+/'
+          line: '/.+/ {{ TEST_EMAIL }}'
+
+    - name: hashmap database file containing SMTP credentials
+      command: postmap hash:/etc/postfix/sasl_passwd
+
+    - name: generate certificate
+      command: postconf -e 'smtp_tls_CAfile = /etc/ssl/certs/Starfield_Class_2_CA.pem'
+
+    - name: reload postfix to read new configuration
+      service: name=postfix state=reloaded
+
+    - name: Make sure postfix is running
+      service: name=postfix state=started
+
+    - name: Test email to root to test if the change was successful
+      mail:
+          subject: System {{ inventory_hostname }} has been successfully provisioned to work with AWS SES.
+          from: {{ inventory_hostname }} <{{ TEST_EMAIL }}>
+          to: Victor Biga <{{ MY_EMAIL }}>
+
+
