@@ -28,7 +28,7 @@
         dest: /tmp/postfix_backup/{{ date }}/
       delegate_to: "{{ inventory_hostname }}"
 
-    - name:
+    - name: configure TLS and add AWS relay host
       command: postconf -e "relayhost = [email-smtp.eu-west-1.amazonaws.com]:587" \
                 "smtp_sasl_auth_enable = yes" \
                 "smtp_sasl_security_options = noanonymous" \

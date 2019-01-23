@@ -8,3 +8,6 @@ echo $date
 official_date=$( date )
 echo $official_date
 
+my_hostname=$( hostname )
+echo $my_hostname
+
