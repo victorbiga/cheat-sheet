@@ -1,0 +1,47 @@
+#!/bin/bash
+
+#Show BASH version
+echo Your BASH version is ${BASH_VERSION}
+echo
+
+#First example of for loop
+for i in 1 2 3 4 5
+do
+	echo $i
+done
+
+echo
+echo Now next example
+
+sleep 3
+
+#Second example of for loop
+
+for i in {1..10}
+do
+	echo $i
+done
+
+sleep 3
+
+echo
+echo Now next example
+
+#Third example of for loop
+
+for i in {0..10..2}
+do
+	echo $i
+done
+
+sleep 3
+
+echo
+echo Now next example
+
+#Fourth example of for loop
+
+for (( i=0; i<5; i++ ))
+do
+	echo $i
+done
