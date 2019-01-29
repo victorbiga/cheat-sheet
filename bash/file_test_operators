@@ -1,0 +1,25 @@
+#!/bin/bash
+#Shell Script has many operators that you can use to test different aspects of a file. 
+#For example, you can use the -e operator to ensure that a file exists before deleting it.
+#Or, you can check that a file can be written to before appending to it. 
+#By checking the feasibility of the impending file operation, 
+#you can reduce the number of errors that your program will encounter.
+echo -e "Enter the name of the file: \c"
+read file_name
+
+if [ -e $file_name ]
+then
+	echo "$file_name found"
+else
+	echo "$file_name not found"
+fi
+
+
+# flag -e is used to check if the file exists
+# flag -f is used to check if the file is a regular file
+# flag -d is used to check if the directory exists
+# flag -c is used to check if the file is character file 
+# flag -b is used to check if the file is a block file
+# flag -s is used to check if the file is empty or not
+# flag -w is used to check if the file has write permission
+# flag -x is used to check if the file is executable
