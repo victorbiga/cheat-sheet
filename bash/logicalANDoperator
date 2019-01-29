@@ -1,0 +1,13 @@
+#!/bin/bash
+
+age=50
+
+if [ "$age" -gt 18 ] && [ "$age" -lt 30 ]
+#if [ "$age" -gt 18 -a $age" -lt 30 ] also can be used as -a acts as && or AND
+#if [[ "$age" -gt 18  && "$age" -lt 30 ]] also can be used as AND operator with  [[ ]] outside
+	
+then
+	echo "valid age"
+else
+	echo "age not valid"
+fi
