@@ -1,0 +1,9 @@
+#!/bin/bash
+
+case expression in 
+	pattern1 )
+		statement ;;
+	patternt2 )
+		statement ;;
+	...
+esac

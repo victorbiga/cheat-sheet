@@ -3,18 +3,13 @@
 num1=20.5
 num2=5
 
-# perform arithmetics first way
-echo $(( num1 + num2 ))
-echo $(( num1 - num2 ))
-echo $(( num1 * num2 ))
-echo $(( num1 / num2 ))
-echo $(( num1 % num2 ))
+echo "20.5+5" | bc
+echo "20.5-5" | bc
+echo "20.5*5" | bc
+echo "scalre=20;20.5/5" | bc
+echo "20.5%5" | bc
 
-#perform arithmetics second way
+num=27
 
-echo $(expr $num1 + $num2 )
-echo $(expr $num1 - $num2 )
-echo $(expr $num1 \* $num2 )
-echo $(expr $num1 / $num2 )
-echo $(expr $num1 % $num2 )
-
+echo "scale=2; sqrt($num)" | bc -l
+echo"sclare=2;3^3" | bc -l
