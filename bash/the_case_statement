@@ -1,9 +1,19 @@
 #!/bin/bash
 
-case expression in 
-	pattern1 )
-		statement ;;
-	patternt2 )
-		statement ;;
-	...
+echo -e "Enter some character : \c"
+read value
+
+
+
+case $vehicle in 
+	[a-z] )
+		echo "User entered $value a to z" ;;
+	[A-Z] )
+		echo "User entered $value A to Z" ;;
+	[0-9] )
+		echo "User entered $value 0 to 9" ;;
+	? )
+		echo "User entered $value special character" ;;
+#	* )
+#		echo "Unknown input" ;;
 esac
