@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo Hello $USER, I hope you are having a good day, please give me one number:
+read lucky_number
+
+
+

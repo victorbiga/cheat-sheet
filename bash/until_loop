@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#until [ condition ]
+#do
+#	command1
+#	command2
+#done
+
+until [ $n -ge 10 ]
+do
+	echo $n
+	n=$(( n+1 ))
+done
