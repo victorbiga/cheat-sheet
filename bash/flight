@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo "Hello Vittor"
+
+flight();
+{
+	echo Monday
+}
+
+
+landing();
+{
+	echo "Monday Evening"
+
+
+case
+	if flight_time == Monday;
+	then flight;
+	else landing;
+esac
